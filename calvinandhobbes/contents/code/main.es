@@ -20,8 +20,7 @@
 //NOTE only this part needs to be changed to support different comics
 const author = "Bill Watterson";
 const websitePart = "calvinandhobbes"; //e.g. the "garfield" in "http://www.gocomics.com/garfield/"
-const firstIdentifier = "1985-11-17";
-const shopUrl = "";
+const firstIdentifier = "1985/11/18";
 
 const infos = {
         "User-Agent": "Mozilla/5.0 (compatible; Konqueror/3.5; Linux) KHTML/3.5.6 (like Gecko)",
@@ -39,7 +38,7 @@ function init()
     comic.comicAuthor = author;
     comic.firstIdentifier = firstIdentifier;
     comic.websiteUrl = infos.referrer + websitePart + '/';
-    comic.shopUrl = shopUrl;
+    comic.shopUrl = comic.websiteUrl;
 
     comic.requestPage(comic.websiteUrl, comic.User, infos);
 }
