@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Baby Blues
+Comment=Baby Blues - MacPherson family parenting
+Type=Service
+X-KDE-ServiceTypes=Plasma/Comic
+Icon=icon.jpg
+
+X-KDE-Library=plasma_comic_krossprovider
+X-KDE-PluginInfo-Author=Philipp Hahn
+X-KDE-PluginInfo-Email=pmhahn+kde pmhahn de
+X-KDE-PluginInfo-Name=baby_blues
+X-KDE-PluginInfo-Version=1
+X-KDE-PluginInfo-Website=http://pmhahn.de/linux/kde/
+X-KDE-PluginInfo-License=GPLv2
+X-KDE-PluginInfo-EnableByDefault=true
+X-KDE-PlasmaComicProvider-SuffixType=String

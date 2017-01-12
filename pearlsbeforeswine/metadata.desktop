@@ -1,0 +1,16 @@
+[Desktop Entry]
+Name=Pearls Before Swine
+Comment=Pearls Before Swine
+Type=Service
+X-KDE-ServiceTypes=Plasma/Comic
+Icon=icon.png
+
+X-KDE-Library=plasma_comic_krossprovider
+X-KDE-PluginInfo-Author=Stephan Renatus
+X-KDE-PluginInfo-Email=srenatus@students.uni-mainz.de
+X-KDE-PluginInfo-Name=pearlsbeforeswine
+X-KDE-PluginInfo-Version=0.1
+X-KDE-PluginInfo-License=GPLv2
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PlasmaComicProvider-SuffixType=Date
+
