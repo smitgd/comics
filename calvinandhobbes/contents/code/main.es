@@ -20,7 +20,6 @@
 //NOTE only this part needs to be changed to support different comics
 const author = "Bill Watterson";
 const websitePart = "calvinandhobbes"; //e.g. the "garfield" in "http://www.gocomics.com/garfield/"
-const comicName = "Calvin"; //needed to find the most recent strip, the name that is displayed next to the "by comic author" on the website
 const firstIdentifier = "1985-11-17";
 const shopUrl = "";
 
@@ -39,7 +38,7 @@ function init()
 {
     comic.comicAuthor = author;
     comic.firstIdentifier = firstIdentifier;
-    comic.websiteUrl = "http://www.gocomics.com/" + websitePart + '/';
+    comic.websiteUrl = infos.referrer + websitePart + '/';
     comic.shopUrl = shopUrl;
 
     comic.requestPage(comic.websiteUrl, comic.User, infos);
@@ -49,7 +48,8 @@ function pageRetrieved(id, data)
 {
     //find lastIdentifier
     if (id == comic.User) {
-        var exp = new RegExp("(\\d{4}/\\d{2}/\\d{2})/?\">" + comicName);
+        var exp = new RegExp("data-url=\"" + comic.websiteUrl + "(\\d{4}/\\d{2}/\\d{2})");
+        // e.g., look for : data-url="http://www.gocomics.com/calvinandhobbes/2017/01/11
         var match = exp.exec(data);
         if (match != null) {
             comic.lastIdentifier = date.fromString(match[1], "yyyy/MM/dd");
@@ -64,34 +64,28 @@ function pageRetrieved(id, data)
 
     //find comic strip and next/previous identifier
     if (id == comic.Page) {
-        var exp = new RegExp("(\\d{4}/\\d{2}/\\d{2})\" class=\"next\"");
+        var exp = new RegExp("control-nav-newer.*" + "(\\d{4}/\\d{2}/\\d{2})");
         var match = exp.exec(data);
         if (match != null) {
             comic.nextIdentifier = date.fromString(match[1], "yyyy/MM/dd");
         }
 
-        exp = new RegExp("(\\d{4}/\\d{2}/\\d{2})\" class=\"prev\"");
+        exp = new RegExp("control-nav-older.*" + "(\\d{4}/\\d{2}/\\d{2})");
         match = exp.exec(data);
         if (match != null) {
             comic.previousIdentifier = date.fromString(match[1], "yyyy/MM/dd");
         }
 
-        // try large strip first
-        exp = new RegExp("class=\"strip\" src=\"([^\"]+)\" />");
+        exp = new RegExp("data-image=\"(.*)\"");
+        // e.g., look for: data-image="http://assets.amuniversal.com/3eaaba20a48301340f47005056a9545d"
+        // Note: now large (Sunday) and small are the same format
         match = exp.exec(data);
         if (match != null) {
             comic.requestPage(match[1], comic.Image, infos);
         } else {
-            // no large strip, try small one
-            exp = new RegExp("class=\"strip\" src=\"([^\"]+)\"");
-            match = exp.exec(data);
-            if (match != null) {
-                comic.requestPage(match[1], comic.Image, infos);
-            } else {
-                print("Could not find comic image.");
-                comic.error();
-                return;
-            }
+            print("Could not find comic image.");
+            comic.error();
+            return;
         }
     }
 }
