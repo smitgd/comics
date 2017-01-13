@@ -20,7 +20,7 @@
 //NOTE only this part needs to be changed to support different comics
 const author = "Garry Trudeau"
 const websitePart = "doonesbury"; //e.g. the "garfield" in "http://www.gocomics.com/garfield/"
-const firstIdentifier = "1970-10-26";
+const firstIdentifier = "1970/10/26";
 
 const infos = {
         "User-Agent": "Mozilla/5.0 (compatible; Konqueror/3.5; Linux) KHTML/3.5.6 (like Gecko)",
