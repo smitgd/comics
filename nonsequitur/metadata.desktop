@@ -1,0 +1,17 @@
+[Desktop Entry]
+Name=Non Sequitur
+Comment=Non Sequitur
+Type=Service
+X-KDE-ServiceTypes=Plasma/Comic
+Icon=danae.jpg
+
+X-KDE-Library=plasma_comic_krossprovider
+X-KDE-PluginInfo-Author=Gene Smith
+X-KDE-PluginInfo-Email=gds@chartertn.net
+X-KDE-PluginInfo-Name=nonsequitur
+X-KDE-PluginInfo-Version=0.1
+X-KDE-PluginInfo-Website=http://plasma.kde.org/
+X-KDE-PluginInfo-License=GPLv2
+X-KDE-PluginInfo-EnabledByDefault=true
+X-KDE-PlasmaComicProvider-SuffixType=Date
+
