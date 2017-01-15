@@ -3,7 +3,7 @@ Name=Get Fuzzy
 Comment=Get Fuzzy
 Type=Service
 X-KDE-ServiceTypes=Plasma/Comic
-Icon=icon.png
+Icon=satch.jpg
 
 X-KDE-Library=plasma_comic_krossprovider
 X-KDE-PluginInfo-Author=Matthias Fuchs

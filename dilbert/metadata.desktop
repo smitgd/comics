@@ -19,7 +19,7 @@ Comment[x-test]=xxDilbertxx
 Comment[zh_TW]=呆伯特
 Type=Service
 X-KDE-ServiceTypes=Plasma/Comic
-Icon=icon.png
+Icon=dilbert.jpg
 
 X-KDE-Library=plasma_comic_krossprovider
 X-KDE-PluginInfo-Author=Cameron Gray

@@ -3,7 +3,7 @@ Name=Pearls Before Swine
 Comment=Pearls Before Swine
 Type=Service
 X-KDE-ServiceTypes=Plasma/Comic
-Icon=icon.png
+Icon=pastis.jpg
 
 X-KDE-Library=plasma_comic_krossprovider
 X-KDE-PluginInfo-Author=Stephan Renatus
