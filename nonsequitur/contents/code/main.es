@@ -48,8 +48,8 @@ function pageRetrieved(id, data)
 {
     //find lastIdentifier
     if (id == comic.User) {
-        var exp = new RegExp("data-url=\"" + comic.websiteUrl + "(\\d{4}/\\d{2}/\\d{2})");
-        // e.g., look for : data-url="http://www.gocomics.com/nonsequitur/2017/01/11
+        var exp = new RegExp("data-link=\"comics\" href=\"/" + websitePart + "/" + "(\\d{4}/\\d{2}/\\d{2})");
+        // e.g., look for : data-link="comics" href="/calvinandhobbes/2018/06/27
         var match = exp.exec(data);
         if (match != null) {
             comic.lastIdentifier = date.fromString(match[1], "yyyy/MM/dd");
